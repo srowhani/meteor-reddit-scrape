@@ -1,0 +1,26 @@
+<template name='subreddit'>
+	{{#if this}}
+	<h2 name='title' class='inline'>{{name}}</h2>
+	<a id='erase' class='aligned btn btn-danger'>Erase {{name}}</a>
+    <br>
+	<small>{{date}}</small>
+	<div class='well container-fluid'>
+	{{#each arrayify posts}}
+		<div class='post rounded'>
+			<a href='{{url}}' target='_blank'>
+				<h4>{{title}}</h4>
+			</a>
+			{{#if thumbnail}}
+				<img class='rounded img' data-src='{{url}}' src='{{thumbnail}}' height=100 width=100/>
+			{{/if}}
+			{{#if emb}}{{{html emb}}}{{/if}}
+			{{#if selftext}}<p class='inline'>{{{substr selftext 0 400}}}</p>{{/if}}
+
+			<small style='display:block'>{{author}}</small>
+			<div id='load'></div>
+		</div>
+		<br>
+	{{/each}}
+	</div>
+	{{/if}}
+</template>

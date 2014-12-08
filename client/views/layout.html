@@ -1,0 +1,9 @@
+<template name='layout'>
+	{{ >navbar }}
+	<div class='content'>
+	<p>Please enable cross access origin for the site to make coherent scrapes!</p>
+	<code>open -a Google\ Chrome --args --disable-web-security -–allow-file-access-from-files</code>
+	<br>
+	{{>yield}}
+	</div>
+</template>
